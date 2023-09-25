@@ -10,19 +10,19 @@ def first_page():
     return render_template('index.html')
 
 
-@app.get('/1/')
+@app.get('/clothes/')
 def clothes():
     context = {'title':'Clothes',
                'content': 'Здесь когда-нибудь будет одежда'} 
     return render_template('page_1.html', **context)
 
-@app.get('/2/')
+@app.get('/shoes/')
 def shoes():
     context = {'title':'Shoes',
                'content': 'А тут обувь'} 
     return render_template('page_2.html', **context)
 
-@app.get('/3/')
+@app.get('/jacket/')
 def jacket():
     context = {'title':'Jacket',
                'content': 'Тут однажды увидим куртки'} 
