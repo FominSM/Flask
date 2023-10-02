@@ -1,0 +1,13 @@
+{% extends 'layout.html' %}
+
+{% block title %}
+  {{ title }} - {{ super() }}
+{% endblock %}
+
+{% block content %}
+  <h1 class="ui header">Opsss...</h1>
+
+  <img class="ui large centered circular image" src="{{ url_for('static', filename='images/cat-404.jpg') }}">
+
+  <a class="ui basic button" href="{{ url }}">Back</a>
+{% endblock %}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/semantic-2.9.3.css') }}">
+  <link rel="stylesheet" href="{{ url_for('static', filename='stylesheets/application.css') }}">
+  <title>
+    {% block title %}
+      SN
+    {% endblock %}
+  </title>
+</head>
+<body>
+  <div class="ui container">
+    <div class="ui inverted menu">
+      <div class="header item">
+        SN
+      </div>
+      <a class="item" href="{{ url_for('home') }}">
+        Home
+      </a>
+      <a class="item" href="{{ url_for('register') }}">
+        SignUp
+      </a>
+    </div>
+
+    {% with messages = get_flashed_messages(with_categories=true) %}
+      {% if messages %}
+        {% for category, message in messages %}
+          <div class="ui {{ category }} message">
+            {{ message }}
+          </div>
+        {% endfor %}
+      {% endif %}
+    {% endwith %}
+
+    {% block content %}
+      NCY
+    {% endblock %}
+  </div>
+
+  <script src="{{ url_for('static', filename='javascripts/jquery-3.7.1.js') }}"></script>
+  <script src="{{ url_for('static', filename='javascripts/semantic-2.9.3.js') }}"></script>
+</body>
+</html>
